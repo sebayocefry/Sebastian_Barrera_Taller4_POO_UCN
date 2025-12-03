@@ -1,4 +1,11 @@
+import java.util.ArrayList;
+
 public interface Isistema {
+	
+	ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+	ArrayList<Curso> listaCursos = new ArrayList<>();
+	ArrayList<Certificaciones> listaCertificaciones = new ArrayList<>();
+	
 	public void cargarUsuarios(String[] partes, String rol);
 	public void cargarEstudiantes(String[] partes, String rol);
 	public Usuario buscarUsuarioNombre(String nombre);
@@ -20,5 +27,6 @@ public interface Isistema {
 	public Estudiante buscarE(String n);
 	public Cordinador buscarC(String n);
 	public void aplicarEstrategia(int i);
-	
+	public void modificarCertficacion(String id, String desc, int cred, int year);
+	public void emisionDiplomaCertficacion(String idCert);
 }

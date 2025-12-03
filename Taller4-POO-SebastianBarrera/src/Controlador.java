@@ -4,13 +4,17 @@ import java.util.ArrayList;
 
 public class Controlador implements Isistema{
 	private static Controlador miInstancia;
+	// para poder llamar la estaregia que completa el punto 2 del menu coor
 	private Reportes misReportes;
+	// para poder llamar a la clase que realiza la gestion de certificaciones del menu coor
+	private GestionCertificaciones gesCertificaciones;
 	ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 	ArrayList<Curso> listaCursos = new ArrayList<>();
 	ArrayList<Certificaciones> listaCertificaciones = new ArrayList<>();
 	
 	private Controlador(){
 		this.misReportes = new Reportes();
+		this.gesCertificaciones = new GestionCertificaciones();
 	}
 	
 	public static Controlador getInstance() {
@@ -230,7 +234,30 @@ public class Controlador implements Isistema{
 		// TODO Auto-generated method stub
 		if(i==1) {
 			misReportes.setMiEstrategia(new AnalisiInscripcion());
+		}else if(i==2) {
+			misReportes.setMiEstrategia(new AnalisisAsignaturas());
 		}
+		
+		String reporte = misReportes.ejecutarReporte(listaUsuarios);
+		
+		System.out.println(reporte);
+	}
+
+	@Override
+	public void modificarCertficacion(String id, String desc, int cred, int year) {
+		// TODO Auto-generated method stub
+		boolean bandera = gesCertificaciones.modificar(listaCertificaciones, id, desc, cred, year);
+		if(bandera) {
+			System.out.println("Cambio realizado con exito");
+		}else {
+			System.out.println("Error: \nLa certificacion no fue encontrada");
+		}
+	}
+
+	@Override
+	public void emisionDiplomaCertficacion(String idCert) {
+		// TODO Auto-generated method stub
+		gesCertificaciones.generar(listaUsuarios, idCert);
 	}
 
 
