@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-
+import java.io.*;
 public class Controlador implements Isistema{
 	private static Controlador miInstancia;
 	// para poder llamar la estaregia que completa el punto 2 del menu coor
@@ -9,6 +9,7 @@ public class Controlador implements Isistema{
 	// para poder llamar a la clase que realiza la gestion de certificaciones del menu coor
 	private GestionCertificaciones gesCertificaciones;
 	private GestionEstudiantes gesEstudiantes;
+	private VisualizacionPerfilEstudiante VPerfilEstudiante;
 	ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 	ArrayList<Curso> listaCursos = new ArrayList<>();
 	ArrayList<Certificaciones> listaCertificaciones = new ArrayList<>();
@@ -17,6 +18,7 @@ public class Controlador implements Isistema{
 		this.misReportes = new Reportes();
 		this.gesCertificaciones = new GestionCertificaciones();
 		this.gesEstudiantes = new GestionEstudiantes();
+		this.VPerfilEstudiante = new VisualizacionPerfilEstudiante();
 	}
 	
 	public static Controlador getInstance() {
@@ -274,6 +276,29 @@ public class Controlador implements Isistema{
             System.out.println("- Verifique que el RUT pertenezca a un Estudiante.");
             System.out.println("- Verifique que el ID de certificacion exista.");
 		}
+	}
+
+	@Override
+	public void verPerfilEstudiante(Usuario uLogin) {
+		// TODO Auto-generated method stub
+		if(uLogin instanceof Estudiante) {
+			Estudiante e = (Estudiante)uLogin;
+			VPerfilEstudiante.mostrarDatosPersonales(e);
+			VPerfilEstudiante.mostrarMalla(e, listaCursos);
+			VPerfilEstudiante.mostrarPromedios(e);
+		}else {
+			System.out.println("ERROR: USTED NO ES ESTUDIANTE");
+		}
+	}
+
+	@Override
+	public Usuario login(String usuario, String password) {
+		for (Usuario u : listaUsuarios) {
+			if(u.getNombre().equalsIgnoreCase(usuario)&&u.getPassword().equals(password)) {
+				return u;
+			}
+		}
+		return null;
 	}
 
 

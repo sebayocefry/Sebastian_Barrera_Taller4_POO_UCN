@@ -31,5 +31,6 @@ public interface Isistema {
 	public void emisionDiplomaCertficacion(String idCert);
 	public void mostrarPerfilesEsMinor(String idCert);
 	public void validarAvanceAcademicoMinor(String rut, String idCert);
-	
+	public void verPerfilEstudiante(Usuario uLogin);
+	public Usuario login(String usuario,String password);
 }
