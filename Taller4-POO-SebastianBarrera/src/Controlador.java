@@ -8,6 +8,7 @@ public class Controlador implements Isistema{
 	private Reportes misReportes;
 	// para poder llamar a la clase que realiza la gestion de certificaciones del menu coor
 	private GestionCertificaciones gesCertificaciones;
+	private GestionEstudiantes gesEstudiantes;
 	ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 	ArrayList<Curso> listaCursos = new ArrayList<>();
 	ArrayList<Certificaciones> listaCertificaciones = new ArrayList<>();
@@ -15,6 +16,7 @@ public class Controlador implements Isistema{
 	private Controlador(){
 		this.misReportes = new Reportes();
 		this.gesCertificaciones = new GestionCertificaciones();
+		this.gesEstudiantes = new GestionEstudiantes();
 	}
 	
 	public static Controlador getInstance() {
@@ -192,7 +194,6 @@ public class Controlador implements Isistema{
 
 	@Override
 	public void rrestablecerContraseña(String nombre, int tipo,String pass) {
-		// TODO Auto-generated method stub
 		if(tipo==1) {
 			Estudiante e = buscarE(nombre);
 			e.setPassword(pass);
@@ -204,7 +205,6 @@ public class Controlador implements Isistema{
 
 	@Override
 	public Estudiante buscarE(String n) {
-		// TODO Auto-generated method stub
 		for (Usuario u : listaUsuarios) {
 			if(u instanceof Estudiante) {
 				if(((Estudiante) u).getRut().equalsIgnoreCase(n)) {
@@ -217,7 +217,6 @@ public class Controlador implements Isistema{
 
 	@Override
 	public Cordinador buscarC(String n) {
-		// TODO Auto-generated method stub
 		for (Usuario u : listaUsuarios) {
 			if(u instanceof Cordinador) {
 				Cordinador c = (Cordinador)u;
@@ -231,7 +230,6 @@ public class Controlador implements Isistema{
 
 	@Override
 	public void aplicarEstrategia(int i) {
-		// TODO Auto-generated method stub
 		if(i==1) {
 			misReportes.setMiEstrategia(new AnalisiInscripcion());
 		}else if(i==2) {
@@ -245,7 +243,6 @@ public class Controlador implements Isistema{
 
 	@Override
 	public void modificarCertficacion(String id, String desc, int cred, int year) {
-		// TODO Auto-generated method stub
 		boolean bandera = gesCertificaciones.modificar(listaCertificaciones, id, desc, cred, year);
 		if(bandera) {
 			System.out.println("Cambio realizado con exito");
@@ -255,9 +252,28 @@ public class Controlador implements Isistema{
 	}
 
 	@Override
-	public void emisionDiplomaCertficacion(String idCert) {
+	public void emisionDiplomaCertficacion(String idCert) {gesCertificaciones.generar(listaUsuarios, idCert);}
+
+	@Override
+	public void mostrarPerfilesEsMinor(String idCert) {
 		// TODO Auto-generated method stub
-		gesCertificaciones.generar(listaUsuarios, idCert);
+		//aqui me ajile y debi hacer una extraccion del obejto antes para ahorrar code en la otra clase
+		gesEstudiantes.listarEstudiantesPorCertificacion(listaUsuarios, idCert);
+	}
+
+	@Override
+	public void validarAvanceAcademicoMinor(String rut, String idCert) {
+		// aqui ya no me paso, aqui anduve mas despierto y extrai el objeto antes
+		Usuario u = buscarUserRut(rut);
+		Certificaciones c = buscarCertificaciones(idCert);
+		if(u!=null&&c!=null) {
+			Estudiante e = (Estudiante)u;
+			gesEstudiantes.validarAvance(e, c);
+		}else {
+			System.out.println("ERROR: No se pudo realizar la validacion.");
+            System.out.println("- Verifique que el RUT pertenezca a un Estudiante.");
+            System.out.println("- Verifique que el ID de certificacion exista.");
+		}
 	}
 
 

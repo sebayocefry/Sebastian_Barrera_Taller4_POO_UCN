@@ -29,4 +29,7 @@ public interface Isistema {
 	public void aplicarEstrategia(int i);
 	public void modificarCertficacion(String id, String desc, int cred, int year);
 	public void emisionDiplomaCertficacion(String idCert);
+	public void mostrarPerfilesEsMinor(String idCert);
+	public void validarAvanceAcademicoMinor(String rut, String idCert);
+	
 }
