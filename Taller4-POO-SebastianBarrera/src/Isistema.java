@@ -37,4 +37,5 @@ public interface Isistema {
 	public void mostrarMallaGrafica(Usuario uLogin);
 	public void mostrarCertificacionesLindo();
 	public void inscribirAsignaturas(String idCert,String rut);
+	public void verDashBoard(String rut);
 }

@@ -11,6 +11,7 @@ public class Controlador implements Isistema{
 	private GestionEstudiantes gesEstudiantes;
 	private VisualizacionPerfilEstudiante VPerfilEstudiante;
 	private InscripcionCertficaciones inscripcionCert;
+	private GestionSeguimientoDashBoard dashBoar;
 	ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 	ArrayList<Curso> listaCursos = new ArrayList<>();
 	ArrayList<Certificaciones> listaCertificaciones = new ArrayList<>();
@@ -21,6 +22,7 @@ public class Controlador implements Isistema{
 		this.gesEstudiantes = new GestionEstudiantes();
 		this.VPerfilEstudiante = new VisualizacionPerfilEstudiante();
 		this.inscripcionCert = new InscripcionCertficaciones();
+		this.dashBoar = new GestionSeguimientoDashBoard();
 	}
 	
 	public static Controlador getInstance() {
@@ -330,6 +332,26 @@ public class Controlador implements Isistema{
 			return;
 		}
 		System.out.println("No existe el estudiante");
+		
+	}
+
+	@Override
+	public void verDashBoard(String rut) {
+		Estudiante e = buscarE(rut);
+		if(e==null || e.getListCertificaciones().isEmpty()) {
+			System.out.println("El estudiante no tiene certificaciones o no existe");
+			return;
+		}
+		dashBoar.mostrarTitlo(e);
+		// dentro de la clase que llamaremos aplicaremos el visitor
+		for (Registros r : e.getListCertificaciones()) {
+			Certificaciones c = buscarCertificaciones(r.getIdCerftificacion());
+			if(c != null) {
+				dashBoar.mostrarProgresoUnitario(e, r, c);
+			}else {
+				System.out.println("no se encontro la certificacion");
+			}
+		}
 		
 	}
 
