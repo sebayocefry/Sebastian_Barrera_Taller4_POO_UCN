@@ -11,7 +11,7 @@ public class MenuAdminFrame extends JFrame {
         this.admin = admin;
 
         setTitle("Administración - " + admin.getNombre());
-        setSize(400, 500);
+        setSize(900, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new GridLayout(6, 1, 10, 10));

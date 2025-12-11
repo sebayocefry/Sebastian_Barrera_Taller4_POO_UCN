@@ -1,7 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class Main {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) throws FileNotFoundException {

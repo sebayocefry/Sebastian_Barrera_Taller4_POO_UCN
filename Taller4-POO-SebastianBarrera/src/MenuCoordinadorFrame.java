@@ -11,7 +11,7 @@ public class MenuCoordinadorFrame extends JFrame {
         this.coord = coord;
 
         setTitle("Coordinacion: " + coord.getAreaCordinador());
-        setSize(500, 600);
+        setSize(1200, 920);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new GridLayout(8, 1, 10, 10)); 

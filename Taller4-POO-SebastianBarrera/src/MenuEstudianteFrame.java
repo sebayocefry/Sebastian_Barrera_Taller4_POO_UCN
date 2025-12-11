@@ -4,7 +4,7 @@ import java.awt.*;
 public class MenuEstudianteFrame extends JFrame {
     public MenuEstudianteFrame(Controlador sistema, Estudiante alumno) {
         setTitle("Menu Estudiante: " + alumno.getNombre());
-        setSize(500, 400);
+        setSize(900, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new GridLayout(5, 1, 10, 10));

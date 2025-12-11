@@ -4,7 +4,7 @@ import java.awt.*;
 public class VentanaReporte extends JFrame {
     public VentanaReporte(String titulo, String contenido) {
         setTitle(titulo);
-        setSize(500, 400);
+        setSize(900, 700);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
         

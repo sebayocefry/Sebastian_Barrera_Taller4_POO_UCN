@@ -14,7 +14,7 @@ public class LoginFrame extends JFrame {
         this.sistema = sistema;
         
         setTitle("Acceso Academicore");
-        setSize(400, 350);
+        setSize(900, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new GridLayout(6, 1, 10, 10)); 

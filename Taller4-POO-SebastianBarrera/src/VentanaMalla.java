@@ -68,8 +68,8 @@ public class VentanaMalla extends JFrame {
     }
 
     private JButton crearBotonCurso(Curso curso) {
-       // el formato html center lo uso para que no se me vean salidos los textos y en el boton
-        String textoBoton = "<html><center>" + curso.getNomnbre() + "</center></html>";
+  
+        String textoBoton = curso.getNomnbre();
         
         JButton btn = new JButton(textoBoton);
         btn.setAlignmentX(Component.CENTER_ALIGNMENT);
