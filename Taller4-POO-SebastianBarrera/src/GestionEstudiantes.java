@@ -1,5 +1,7 @@
 import java.util.ArrayList;
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class GestionEstudiantes {
 
     public String listarEstudiantesPorCertificacion(ArrayList<Usuario> listaUsuarios, String idCertificacion) {

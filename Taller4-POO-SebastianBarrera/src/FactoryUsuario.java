@@ -1,4 +1,6 @@
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class FactoryUsuario {
 	public static Usuario crearU(String[] partes,String rol) {
 		

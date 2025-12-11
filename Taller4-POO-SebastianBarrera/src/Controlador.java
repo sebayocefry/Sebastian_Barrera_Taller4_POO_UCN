@@ -1,3 +1,6 @@
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

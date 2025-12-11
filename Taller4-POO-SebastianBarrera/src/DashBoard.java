@@ -1,6 +1,8 @@
 // la verdad no entendi muy bien la funcion especifica que se pedia en el visitor, asi que mostarre mensajes
 public class DashBoard implements Visitor{
-
+	//sebastian barrera carvajal
+	//20.015.335-9
+	//ITI
 	@Override
 	public void visitar(SistemasInteligentes sis) {
 		System.out.println("[Minor IA]: Sistemas inteligentes en Python");

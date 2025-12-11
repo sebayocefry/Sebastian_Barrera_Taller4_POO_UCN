@@ -1,5 +1,7 @@
 import java.time.LocalDate;
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class Registros {
    private String rutEstudiante;
    private String idCerftificacion;

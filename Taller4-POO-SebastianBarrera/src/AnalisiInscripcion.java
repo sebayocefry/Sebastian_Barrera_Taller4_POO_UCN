@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 // a diferencia del taller pasado retorno todo en datos en vez de solo mostrar para asi poder usarlo en una futura visualizzacion grafica
 public class AnalisiInscripcion implements Estrategia {
 	

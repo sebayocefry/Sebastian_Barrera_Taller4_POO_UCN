@@ -1,4 +1,6 @@
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class Asignaturas {
 	private String idCertficacion; 
 	private String codigoAsignatura;

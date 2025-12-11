@@ -1,5 +1,7 @@
 import java.util.ArrayList;
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public interface Isistema {
 	
 	ArrayList<Usuario> listaUsuarios = new ArrayList<>();

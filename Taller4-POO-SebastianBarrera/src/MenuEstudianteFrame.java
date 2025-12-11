@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class MenuEstudianteFrame extends JFrame {
     public MenuEstudianteFrame(Controlador sistema, Estudiante alumno) {
         setTitle("Menu Estudiante: " + alumno.getNombre());

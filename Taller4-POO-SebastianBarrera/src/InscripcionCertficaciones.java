@@ -1,6 +1,8 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class InscripcionCertficaciones {
 	public String ofertaCertificaciones(ArrayList<Certificaciones> lista) {
 		StringBuilder sb = new StringBuilder();

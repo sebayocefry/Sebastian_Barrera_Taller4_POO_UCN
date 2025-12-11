@@ -1,4 +1,6 @@
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class CiberSeguridad extends Certificaciones  {
 
 	public CiberSeguridad(String id, String nombre, String descripcion, int minCreditos, int yearsValides) {

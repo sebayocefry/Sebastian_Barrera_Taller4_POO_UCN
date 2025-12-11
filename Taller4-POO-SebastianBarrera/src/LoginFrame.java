@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class LoginFrame extends JFrame {
 
     private Controlador sistema;

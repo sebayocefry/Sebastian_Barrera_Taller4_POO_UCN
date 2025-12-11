@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Collections;
-
+//sebastian barrera carvajal
+//20.015.335-9
+//ITI
 public class AnalisisAsignaturas implements Estrategia {
 
 	@Override
