@@ -77,7 +77,6 @@ Estrucutura
 
 
 
-¡Entendido! Aquí tienes el flujo de uso del programa, presentado solo como texto descriptivo, sin tablas ni casillas.
 
 Instrucciones de Uso del Programa
 Una vez que ejecutes la aplicación (vista/Main.java), la interfaz gráfica te guiará a través de las funciones principales.
