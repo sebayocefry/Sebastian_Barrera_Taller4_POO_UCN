@@ -37,3 +37,4 @@ notas:
 3.Implemente dos inicios de sesion para admis y coordinador a traves de su usuario y estudiante con su rut.
 4.En la peticion editar usuario, solo permito que se modifiquen 3 atributos ya que el pdf no indica cuentos y 3 atributos me pareciron coherentes para mi diseño de programa(factoryusuario)
 5.Hace semanas venia viendo como hacer el sistema menos gigante, la forma que "solucione" eso fue haciendo una clase por funcion o requerimiento, la clase se referenciaba en el sistema y asi eviataba una clase gigante y que tuviera el poder de hacer todo, asi divido responsabilidades.
+![image_alt](https://github.com/sebayocefry/Sebastian_Barrera_Taller4_POO_UCN/blob/main/umlTALLER4.png?raw=true)
