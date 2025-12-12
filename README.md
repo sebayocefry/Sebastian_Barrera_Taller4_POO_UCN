@@ -1,5 +1,5 @@
-# Taller-4Poo-Ucn-Sebastian-Barrera
-
+# Taller-4Poo -Ucn-Sebastian-Barrera
+#Nombre sebastian Barrera- RUT 20.015.335-9-ITI
 Sistema de Gestión Académica - Academicore
 Este proyecto es la solución al desafío final del curso, donde se nos pidió desarrollar un sistema de gestión académica completo para una universidad. El objetivo principal fue crear una aplicación que permitiera administrar usuarios (estudiantes, coordinadores y administradores), gestionar cursos, notas y, lo más importante, manejar todo el proceso de inscripción y seguimiento de certificaciones (Minors).
 
@@ -38,3 +38,38 @@ notas:
 4.En la peticion editar usuario, solo permito que se modifiquen 3 atributos ya que el pdf no indica cuentos y 3 atributos me pareciron coherentes para mi diseño de programa(factoryusuario)
 5.Hace semanas venia viendo como hacer el sistema menos gigante, la forma que "solucione" eso fue haciendo una clase por funcion o requerimiento, la clase se referenciaba en el sistema y asi eviataba una clase gigante y que tuviera el poder de hacer todo, asi divido responsabilidades.
 ![image_alt](https://github.com/sebayocefry/Sebastian_Barrera_Taller4_POO_UCN/blob/main/umlTALLER4.png?raw=true)
+
+Estrucutura
+
+├── src/
+│   ├── controlador/        // Lógica de Negocio y Gestión
+│   │   ├── Controlador.java
+│   │   ├── Isistema.java
+│   │   ├── GestionCertificaciones.java
+│   │   ├── GestionEstudiantes.java
+│   │   ├── GestionSeguimientoDashBoard.java
+│   │   ├── VisualizacionPerfilEstudiante.java
+│   │   ├── FactoryUsuario.java
+│   │   └── (Otras clases de gestión y patrones: Estrategias, Reportes, Visitor...)
+│   │
+│   ├── modelo/             // Entidades de Datos
+│   │   ├── Usuario.java
+│   │   ├── Estudiante.java
+│   │   ├── Cordinador.java
+│   │   ├── Curso.java
+│   │   ├── Notas.java
+│   │   └── (Otras clases de entidad: Registros, Certificaciones hijas...)
+│   │
+│   └── vista/              // Interfaz Gráfica (GUI)
+│       ├── Main.java       // Punto de inicio de la aplicación
+│       ├── LoginFrame.java
+│       ├── MenuEstudianteFrame.java
+│       ├── MenuCoordinadorFrame.java
+│       ├── MenuAdminFrame.java
+│       └── (Otras ventanas: VentanaMalla, VentanaReporte)
+│
+└── (Archivos de Persistencia)
+    ├── usuarios.txt
+    ├── cursos.txt
+    ├── notas.txt
+    └── ... (resto de archivos .txt)
